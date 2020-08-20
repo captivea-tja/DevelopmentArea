@@ -21,6 +21,8 @@ class CustomCustomerPortal(CustomerPortal):
         
         test_file = post.get('x_test_file')
         if test_file:
+            file_name = test_file.filename
+            _logger.info('!!!!!' + file_name + '!!!!!')
             file_base64 = base64.encodestring(test_file.read())
             post.update({'x_test_file': file_base64})
             #post['x_test_file_filename'] = 'customer_upload.pdf'
