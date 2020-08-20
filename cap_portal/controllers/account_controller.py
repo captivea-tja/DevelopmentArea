@@ -22,6 +22,7 @@ class CustomCustomerPortal(CustomerPortal):
         if test_file:
             file_base64 = base64.encodestring(test_file.read())
             post.update({'x_test_file': file_base64})
+            post['x_test_file_filename'] = 'customer_upload.pdf'
         
         res = super(CustomCustomerPortal, self).account(redirect=None, **post)
         
