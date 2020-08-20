@@ -20,9 +20,10 @@ class CustomCustomerPortal(CustomerPortal):
         
         _logger.info('!!!!!!!!!!!!!!!!!!!Executing1!!!!!!!!!!!!!!!!!')
         
-        #test_file = post.get('x_test_file')
-        #if test_file:
-            #file_base64 = base64.encodestring(test_file.read())
+        test_file = post.get('x_test_file')
+        if test_file:
+            file_base64 = base64.encodestring(test_file.read())
+            post.update({'x_test_file': file_base64})
         
         res = super(CustomCustomerPortal, self).account(redirect=None, **post)
         
@@ -38,9 +39,6 @@ class CustomCustomerPortal(CustomerPortal):
         #content = post.get('content')
         #FileData = content.read()
         #file_base64 = base64.encodestring(FileData)
-        
-        
-            #post.update({'x_test_file': file_base64})
         
         return res
 
