@@ -33,7 +33,7 @@ class CustomCustomerPortal(CustomerPortal):
         for p in post:
             _logger.info(i)
             i = i + 1
-            _logger.info(type(p))
+            _logger.info(post[p])
         
         #content = post.get('content')
         #FileData = content.read()
