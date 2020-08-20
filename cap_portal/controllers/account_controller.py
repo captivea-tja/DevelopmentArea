@@ -36,7 +36,7 @@ class CustomCustomerPortal(CustomerPortal):
         test_file = post.get('x_test_file')
         if test_file:
             file_base64 = base64.encodestring(test_file.read())
-            post.update({'x_test_file': file_base64})
+            #post.update({'x_test_file': file_base64})
         
         return res
 
