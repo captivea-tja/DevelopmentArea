@@ -18,8 +18,6 @@ class CustomCustomerPortal(CustomerPortal):
     @route(['/my/account'], type='http', auth='user', website=True)
     def account(self, redirect=None, **post):
         
-        _logger.info('!!!!!!!!!!!!!!!!!!!Executing1!!!!!!!!!!!!!!!!!')
-        
         test_file = post.get('x_test_file')
         if test_file:
             file_base64 = base64.encodestring(test_file.read())
@@ -27,20 +25,4 @@ class CustomCustomerPortal(CustomerPortal):
         
         res = super(CustomCustomerPortal, self).account(redirect=None, **post)
         
-        _logger.info('!!!!!!!!!!!!!!!!!!!Executing2!!!!!!!!!!!!!!!!!')
-        
-        i = 0
-        
-        for p in post:
-            _logger.info(i)
-            i = i + 1
-            _logger.info(post[p])
-        
-        #content = post.get('content')
-        #FileData = content.read()
-        #file_base64 = base64.encodestring(FileData)
-        
         return res
-
-    
-    
