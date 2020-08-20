@@ -12,6 +12,7 @@ from odoo.addons.portal.controllers.portal import CustomerPortal
 _logger = logging.getLogger(__name__)
 
 CustomerPortal.OPTIONAL_BILLING_FIELDS.append('x_test_file')
+CustomerPortal.OPTIONAL_BILLING_FIELDS.append('x_test_file_filename')
 
 class CustomCustomerPortal(CustomerPortal):
 
