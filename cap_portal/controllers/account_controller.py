@@ -22,7 +22,11 @@ class CustomCustomerPortal(CustomerPortal):
         
         _logger.info('!!!!!!!!!!!!!!!!!!!Executing!!!!!!!!!!!!!!!!!')
         
+        i = 0
+        
         for p in post:
+            _logger.info(i)
+            i = i + 1
             _logger.info(p)
         
         #content = post.get('content')
