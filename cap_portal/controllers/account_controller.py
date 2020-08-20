@@ -20,6 +20,8 @@ class CustomCustomerPortal(CustomerPortal):
         
         res = super(CustomCustomerPortal, self).account(redirect=None, **post)
         
+        _logger.info('!!!!!!!!!!!!!!!!!!!Executing!!!!!!!!!!!!!!!!!')
+        
         for p in post:
             _logger.info(p)
         
