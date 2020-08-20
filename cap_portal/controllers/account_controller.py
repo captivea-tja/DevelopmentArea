@@ -2,7 +2,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl)
 import base64
 
-from odoo import http,
+from odoo import http
 from odoo.http import content_disposition, Controller, request, route
 
 from odoo.addons.portal.controllers.portal import CustomerPortal
