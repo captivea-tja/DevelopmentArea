@@ -15,11 +15,11 @@ class CustomCustomerPortal(CustomerPortal):
     @route(['/my/account'], type='http', auth='user', website=True)
     def account(self, redirect=None, **post):
         
+        res = super(CustomCustomerPortal, self).account(redirect=None, **post)
+        
         content = post.get('content')
         FileData = content.read()
         file_base64 = base64.encodestring(FileData)
-        
-        res = super(CustomCustomerPortal, self).account(redirect=None, **post)
         
         #test_file = post.get('x_test_file')
         #file_base64 = base64.encodestring(test_file.read())
